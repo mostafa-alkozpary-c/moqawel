@@ -1,0 +1,314 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>لوحة تحكم إدارة موقع المقاول | Client Dashboard</title>
+
+  <!-- Google Fonts Cairo -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700;800;900&display=swap" rel="stylesheet">
+
+  <!-- Dashboard Stylesheet -->
+  <link rel="stylesheet" href="css/dashboard.css">
+</head>
+<body>
+
+  <!-- Top Navbar -->
+  <header class="dash-navbar">
+    <div class="dash-nav-container">
+      <div class="dash-brand">
+        <div class="dash-logo-icon">🔨</div>
+        <div class="dash-brand-info">
+          <h1>لوحة تحكم المقاول</h1>
+          <span>إدارة وتحديث صفحة الهبوط وتسليم العميل</span>
+        </div>
+      </div>
+
+      <div class="dash-nav-actions">
+        <a href="index.html" target="_blank" class="dash-btn dash-btn-outline" title="فتح الصفحة الحالية في تبويب جديد">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path><polyline points="15 3 21 3 21 9"></polyline><line x1="10" y1="14" x2="21" y2="3"></line></svg>
+          <span>عرض الموقع الحالي</span>
+        </a>
+
+        <button type="button" id="btn-export-html" class="dash-btn dash-btn-primary" title="حفظ التعديلات وتنزيل ملف index.html المحدث">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path><polyline points="7 10 12 15 17 10"></polyline><line x1="12" y1="15" x2="12" y2="3"></line></svg>
+          <span>تصدير وتنزيل index.html المحدث</span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- Dashboard Layout -->
+  <div class="dash-layout">
+    <!-- Sidebar Menu -->
+    <aside class="dash-sidebar">
+      <div class="dash-sidebar-title">أقسام التحكم</div>
+      <ul class="dash-menu">
+        <li>
+          <button type="button" class="dash-tab-btn active" data-tab="contact">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path></svg>
+            <span>بيانات الاتصال والهاتف</span>
+          </button>
+        </li>
+        <li>
+          <button type="button" class="dash-tab-btn" data-tab="services">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="7" width="20" height="14" rx="2" ry="2"></rect><path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"></path></svg>
+            <span>إدارة وتعديل الخدمات (7)</span>
+          </button>
+        </li>
+        <li>
+          <button type="button" class="dash-tab-btn" data-tab="gallery">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="2" ry="2"></rect><circle cx="8.5" cy="8.5" r="1.5"></circle><polyline points="21 15 16 10 5 21"></polyline></svg>
+            <span>معرض الأعمال والصور</span>
+          </button>
+        </li>
+        <li>
+          <button type="button" class="dash-tab-btn" data-tab="ads-seo">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"></polyline></svg>
+            <span>إعلانات Google Ads وسيو</span>
+          </button>
+        </li>
+        <li>
+          <button type="button" class="dash-tab-btn" data-tab="preview">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="5" y="2" width="14" height="20" rx="2" ry="2"></rect><line x1="12" y1="18" x2="12.01" y2="18"></line></svg>
+            <span>المعاينة المباشرة (Live)</span>
+          </button>
+        </li>
+        <li>
+          <button type="button" class="dash-tab-btn" data-tab="handover">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"></circle><polyline points="12 16 16 12 12 8"></polyline><line x1="8" y1="12" x2="16" y2="12"></line></svg>
+            <span>دليل تسليم ونشر الموقع</span>
+          </button>
+        </li>
+      </ul>
+
+      <div style="margin-top: 2rem; border-top: 1px solid var(--dash-border); padding-top: 1rem;">
+        <button type="button" id="btn-reset-default" class="dash-btn dash-btn-outline" style="width: 100%; font-size: 0.85rem; color: var(--dash-muted);">
+          استعادة البيانات الأصلية
+        </button>
+      </div>
+    </aside>
+
+    <!-- Main Content Panels -->
+    <main class="dash-main">
+
+      <!-- Panel 1: Contact & Numbers -->
+      <section id="panel-contact" class="dash-panel active">
+        <div class="dash-panel-header">
+          <h2>أرقام الاتصال والبيانات الأساسية</h2>
+          <p>تعديل رقم الهاتف وشريط الاتصال المباشر للجوال وأرقام الواتساب الظاهرة في الصفحة.</p>
+        </div>
+
+        <div class="dash-form-grid dash-form-grid-2">
+          <div class="dash-group">
+            <label class="dash-label" for="input-phone">
+              <span>رقم هاتف الاتصال المباشر (tel)</span>
+              <span class="dash-hint">يظهر في أزرار الاتصال وشريط الموبايل</span>
+            </label>
+            <input type="text" id="input-phone" class="dash-input" placeholder="مثال: 94093969" dir="ltr" style="text-align: right;">
+          </div>
+
+          <div class="dash-group">
+            <label class="dash-label" for="input-whatsapp">
+              <span>رقم الواتساب (WhatsApp)</span>
+              <span class="dash-hint">رقم الواتساب داخل الكويت</span>
+            </label>
+            <input type="text" id="input-whatsapp" class="dash-input" placeholder="مثال: 94093969" dir="ltr" style="text-align: right;">
+          </div>
+
+          <div class="dash-group">
+            <label class="dash-label" for="input-brand-title">
+              <span>اسم النشاط التجاري</span>
+              <span class="dash-hint">يظهر في الهيدر والفوتر</span>
+            </label>
+            <input type="text" id="input-brand-title" class="dash-input" placeholder="مثال: مقاول الكويت">
+          </div>
+
+          <div class="dash-group">
+            <label class="dash-label" for="input-brand-sub">
+              <span>وصف الهيدر والشعار النصي</span>
+            </label>
+            <input type="text" id="input-brand-sub" class="dash-input" placeholder="أعمال التكسير والترميم والبناء">
+          </div>
+
+          <div class="dash-group" style="grid-column: 1 / -1;">
+            <label class="dash-label" for="input-hero-title">
+              <span>عنوان الواجهة الرئيسي (Hero H1)</span>
+              <span class="dash-hint">العنوان الأهم لحملات Google Ads والتحويل</span>
+            </label>
+            <input type="text" id="input-hero-title" class="dash-input">
+          </div>
+
+          <div class="dash-group" style="grid-column: 1 / -1;">
+            <label class="dash-label" for="input-hero-sub">
+              <span>وصف الواجهة التوضيحي (Hero Subtitle)</span>
+            </label>
+            <textarea id="input-hero-sub" class="dash-textarea"></textarea>
+          </div>
+        </div>
+      </section>
+
+      <!-- Panel 2: Services Editor -->
+      <section id="panel-services" class="dash-panel">
+        <div class="dash-panel-header">
+          <h2>إدارة وتعديل الخدمات المعروضة</h2>
+          <p>تعديل أسماء ونصوص الخدمات الـ 7 المعروضة في الصفحة بما يناسب نشاط العميل.</p>
+        </div>
+
+        <div id="services-editor-list" class="dash-services-list">
+          <!-- Populated by JavaScript -->
+        </div>
+      </section>
+
+      <!-- Panel 3: Gallery & Media -->
+      <section id="panel-gallery" class="dash-panel">
+        <div class="dash-panel-header">
+          <h2>معرض الأعمال والصور</h2>
+          <p>معاينة صور الأعمال الميدانية الـ 6 المعتمدة حالياً في الموقع.</p>
+        </div>
+
+        <div style="display: grid; grid-template-columns: repeat(auto-fill, minmax(240px, 1fr)); gap: 1.25rem;">
+          <div style="background-color: #0b0e14; border: 1px solid var(--dash-border); border-radius: 8px; overflow: hidden; padding: 0.75rem;">
+            <img src="assets/images/user-demolition-wall.jpg" alt="تكسير وهدم" style="width: 100%; aspect-ratio: 4/3; object-fit: cover; border-radius: 6px; margin-bottom: 0.5rem;">
+            <strong style="font-size: 0.95rem; color: #fff; display: block;">01. تكسير وهدم جدران</strong>
+            <span style="font-size: 0.8rem; color: var(--dash-muted);">assets/images/user-demolition-wall.jpg</span>
+          </div>
+
+          <div style="background-color: #0b0e14; border: 1px solid var(--dash-border); border-radius: 8px; overflow: hidden; padding: 0.75rem;">
+            <img src="assets/images/user-drilling-worker.jpg" alt="تثقيب ودريل" style="width: 100%; aspect-ratio: 4/3; object-fit: cover; border-radius: 6px; margin-bottom: 0.5rem;">
+            <strong style="font-size: 0.95rem; color: #fff; display: block;">02. تكسير ودريل خرسانة</strong>
+            <span style="font-size: 0.8rem; color: var(--dash-muted);">assets/images/user-drilling-worker.jpg</span>
+          </div>
+
+          <div style="background-color: #0b0e14; border: 1px solid var(--dash-border); border-radius: 8px; overflow: hidden; padding: 0.75rem;">
+            <img src="assets/images/user-renovation-building.jpg" alt="ترميمات عامة" style="width: 100%; aspect-ratio: 4/3; object-fit: cover; border-radius: 6px; margin-bottom: 0.5rem;">
+            <strong style="font-size: 0.95rem; color: #fff; display: block;">03. ترميمات عامة وقسائم</strong>
+            <span style="font-size: 0.8rem; color: var(--dash-muted);">assets/images/user-renovation-building.jpg</span>
+          </div>
+
+          <div style="background-color: #0b0e14; border: 1px solid var(--dash-border); border-radius: 8px; overflow: hidden; padding: 0.75rem;">
+            <img src="assets/images/user-black-structure.jpg" alt="هيكل أسود" style="width: 100%; aspect-ratio: 4/3; object-fit: cover; border-radius: 6px; margin-bottom: 0.5rem;">
+            <strong style="font-size: 0.95rem; color: #fff; display: block;">04. بناء هيكل أسود</strong>
+            <span style="font-size: 0.8rem; color: var(--dash-muted);">assets/images/user-black-structure.jpg</span>
+          </div>
+
+          <div style="background-color: #0b0e14; border: 1px solid var(--dash-border); border-radius: 8px; overflow: hidden; padding: 0.75rem;">
+            <img src="assets/images/user-villa-facade.jpg" alt="مساح سيجما" style="width: 100%; aspect-ratio: 4/3; object-fit: cover; border-radius: 6px; margin-bottom: 0.5rem;">
+            <strong style="font-size: 0.95rem; color: #fff; display: block;">05. بناء وتشطيب ومساح</strong>
+            <span style="font-size: 0.8rem; color: var(--dash-muted);">assets/images/user-villa-facade.jpg</span>
+          </div>
+
+          <div style="background-color: #0b0e14; border: 1px solid var(--dash-border); border-radius: 8px; overflow: hidden; padding: 0.75rem;">
+            <img src="assets/images/user-ceramic.jpg" alt="تركيب سيراميك" style="width: 100%; aspect-ratio: 4/3; object-fit: cover; border-radius: 6px; margin-bottom: 0.5rem;">
+            <strong style="font-size: 0.95rem; color: #fff; display: block;">06. تركيب سيراميك وبلاط</strong>
+            <span style="font-size: 0.8rem; color: var(--dash-muted);">assets/images/user-ceramic.jpg</span>
+          </div>
+        </div>
+
+        <div style="margin-top: 1.5rem; background: rgba(245, 158, 11, 0.08); border: 1px solid rgba(245, 158, 11, 0.25); border-radius: 8px; padding: 1rem; font-size: 0.9rem; color: #cbd5e1;">
+          💡 <strong>ملاحظة لتغيير أي صورة:</strong> يمكنك استبدال أي صورة بوضع صورتك الجديدة بنفس الاسم داخل مجلد <code style="color: var(--dash-primary);">assets/images/</code> وستظهر فوراً في الموقع!
+        </div>
+      </section>
+
+      <!-- Panel 4: Google Ads & SEO -->
+      <section id="panel-ads-seo" class="dash-panel">
+        <div class="dash-panel-header">
+          <h2>إعدادات Google Ads ومحركات البحث (SEO)</h2>
+          <p>تهيئة معرّف التتبع لحملات إعلانات جوجل وعناوين الظهور في محرك البحث.</p>
+        </div>
+
+        <div class="dash-form-grid">
+          <div class="dash-group">
+            <label class="dash-label" for="input-google-ads">
+              <span>معرّف تتبع إعلانات جوجل (Google Ads Conversion Tag)</span>
+              <span class="dash-hint">اختياري - لتتبع نقرات الاتصال في Google Ads</span>
+            </label>
+            <input type="text" id="input-google-ads" class="dash-input" placeholder="مثال: AW-18406219764" dir="ltr" style="text-align: right;">
+            <small style="color: var(--dash-muted); font-size: 0.8rem;">عند إدخال هذا المعرّف، سيتم حقن كود gtag.js تلقائياً وتتبع كل نقرة على زر الاتصال كـ Conversion في حملاتك.</small>
+          </div>
+
+          <div class="dash-group">
+            <label class="dash-label" for="input-meta-title">
+              <span>عنوان الموقع في جوجل (Meta Title)</span>
+            </label>
+            <input type="text" id="input-meta-title" class="dash-input">
+          </div>
+
+          <div class="dash-group">
+            <label class="dash-label" for="input-meta-desc">
+              <span>وصف الموقع في جوجل (Meta Description)</span>
+            </label>
+            <textarea id="input-meta-desc" class="dash-textarea"></textarea>
+          </div>
+        </div>
+      </section>
+
+      <!-- Panel 5: Live Preview -->
+      <section id="panel-preview" class="dash-panel">
+        <div class="dash-panel-header">
+          <h2>المعاينة المباشرة لصفحة الموقع</h2>
+          <p>معاينة تفاعلية حية لشاشات الجوال وسطح المكتب تنعكس عليها تعديلاتك الحالية فوراً.</p>
+        </div>
+
+        <div class="dash-preview-container">
+          <div class="dash-preview-controls">
+            <button type="button" id="btn-preview-mobile" class="dash-preview-device-btn active">📱 شاشة الموبايل (Mobile First)</button>
+            <button type="button" id="btn-preview-desktop" class="dash-preview-device-btn">💻 شاشة الكمبيوتر (Desktop)</button>
+          </div>
+
+          <div id="preview-frame-wrap" class="dash-phone-frame">
+            <iframe id="preview-iframe" title="المعاينة الحية"></iframe>
+          </div>
+        </div>
+      </section>
+
+      <!-- Panel 6: Handover & Deploy Guide -->
+      <section id="panel-handover" class="dash-panel">
+        <div class="dash-panel-header">
+          <h2>دليل تسليم ونشر الموقع للعميل</h2>
+          <p>خطوات مبسطة جداً لتسليم المشروع لصاحب النشاط لرفعه وتشغيله خلال دقيقة واحدة.</p>
+        </div>
+
+        <div class="dash-guide-grid">
+          <div class="dash-guide-card">
+            <div class="dash-guide-num">1</div>
+            <h3>تعديل البيانات وتنزيل الملف</h3>
+            <p>من خلال هذه اللوحة، قم بتعديل رقم الهاتف وأسماء الخدمات إن رغبت، ثم اضغط على زر <strong>"تصدير وتنزيل index.html المحدث"</strong> بالأعلى.</p>
+          </div>
+
+          <div class="dash-guide-card">
+            <div class="dash-guide-num">2</div>
+            <h3>استبدال الملف داخل المجلد</h3>
+            <p>ضع ملف <code style="color: var(--dash-primary);">index.html</code> الذي تم تنزيله داخل مجلد المشروع ليحل محل الملف القديم.</p>
+          </div>
+
+          <div class="dash-guide-card">
+            <div class="dash-guide-num">3</div>
+            <h3>الرفع المجاني الفوري</h3>
+            <p>ادخل على <a href="https://app.netlify.com/drop" target="_blank" style="color: var(--dash-primary); font-weight: 700;">Netlify Drop</a> أو <a href="https://pages.cloudflare.com" target="_blank" style="color: var(--dash-primary); font-weight: 700;">Cloudflare Pages</a>، واسحب مجلد المشروع وأفلته ليصبح موقعك لايف برابط رسمي فوراً!</p>
+          </div>
+        </div>
+
+        <div style="margin-top: 1.75rem; background-color: #0b0e14; border: 1px solid var(--dash-border); border-radius: 8px; padding: 1.25rem;">
+          <h4 style="color: #fff; margin-bottom: 0.5rem;">📁 تسليم المجلد كاملاً للعميل:</h4>
+          <p style="font-size: 0.9rem; color: var(--dash-muted); line-height: 1.6;">
+            يمكنك إرسال مجلد المشروع كاملاً (<code style="color: var(--dash-primary);">moqawel.zip</code>) للعميل. وبما أن لوحة التحكم <code style="color: var(--dash-primary);">dashboard.html</code> مدمجة داخل المجلد، سيتمكن العميل في أي وقت مستقبلاً من فتحها بضغطة زر وتعديل رقمه أو خدماته بنفسه بدون أي وسيط وبدون الحاجة لتعلم البرمجة.
+          </p>
+        </div>
+      </section>
+
+    </main>
+  </div>
+
+  <!-- Toast Notification -->
+  <div id="dash-toast" class="dash-toast">
+    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"></polyline></svg>
+    <span class="toast-msg">تم الحفظ بنجاح!</span>
+  </div>
+
+  <!-- Dashboard Script -->
+  <script src="js/dashboard.js"></script>
+</body>
+</html>
